@@ -1,0 +1,71 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+{% endblock %}
+{% block content %}
+
+<a href="{% url 'main' %}"><i class="fas fa-arrow-circle-left"></i></a>
+
+
+{% if 'detail_contact' in request.path %}
+<img src="{{detail.imageURL}}" class="detail_img">
+<h2>{{detail.name}}</h2>
+{% else %}
+<img src="{% static 'images/profile.png' %}" class="detail_img">
+<h2>New contact</h2>
+{% endif %}
+
+
+<form action="" method="POST" class="detail_form">
+  {% csrf_token %}
+  <div class="info_line">
+    <label for="name_input">Full name:</label>
+    <i class="fas fa-user-circle"></i>
+    {% if 'detail_contact' in request.path %}
+    <input type="text" id="name_input" class="detail_input" value="{{detail.name}}" name="fullname">
+    {% else %}
+    <input type="text" id="name_input" class="detail_input" placeholder="Name:" name="fullname">
+    {% endif %}
+  </div>
+  <div class="info_line">
+    <label for="number_input">Phone number:</label>
+    <i class="fas fa-phone"></i>
+    {% if 'detail_contact' in request.path %}
+    <input type="text" id="number_input" class="detail_input" value="{{detail.number}}" name="number">
+    {% else %}
+    <input type="text" id="number_input" class="detail_input" placeholder="Number:" name="number">
+    {% endif %}
+  </div>
+  <div class="info_line">
+    <label for="mail_input">E-mail:</label>
+    <i class="fas fa-envelope"></i>
+    {% if 'detail_contact' in request.path %}
+    <input type="email" id="mail_input"  class="detail_input" value="{{detail.email}}" name="email">
+    {% else %}
+    <input type="email" id="mail_input"  class="detail_input" placeholder="Email" name="email">
+    {% endif %}
+  </div>
+  <div class="info_line">
+    <label for="address_input">Address:</label>
+    <i class="fas fa-map-marker-alt"></i>
+    {% if 'detail_contact' in request.path %}
+    <input type="text" id="address_input" class="detail_input" value="{{detail.address}}" name="address">
+    {% else %}
+    <input type="text" id="address_input" class="detail_input" placeholder="Address" name="address">
+    {% endif %}
+  </div>
+
+  <div class="detail_buttons">
+    {% if 'detail_contact' in request.path %}
+    <button type="submit" class="btn btn-outline-success col-sm-12">Save Contact</button>
+    <a href="{% url 'delete_contact' detail.id %}" class="btn btn-outline-danger col-sm-12">Delete Contact</a>
+    {% else %}
+    <button type="submit" class="btn btn-outline-success col-sm-12">Create Contact</button>
+    {% endif %}
+  </div>
+
+</form>
+
+
+{% endblock %}

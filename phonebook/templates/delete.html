@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock %}
+
+
+{% block content%}
+<a href="{% url 'detail_contact' contact.id %}"><i class="fas fa-arrow-circle-left"></i></a>
+
+
+<img src="{{contact.imageURL}}" class="detail_img">
+<h2>{{contact.name}}</h2>
+<p class="confirm">Are you sure you want to delete this contact?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" class="btn btn-danger col-sm-12" value="Delete Contact"></input>
+</form>
+{% endblock %}
