@@ -27,7 +27,7 @@ SECRET_KEY = 'ir$g*en0u*m==yyz9#ocexk$z56bh8gxiq_!8$jg#!d4v1g1v+'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['phonebooks-app.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['phonebooks-app.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
