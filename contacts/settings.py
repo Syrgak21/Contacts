@@ -78,16 +78,12 @@ WSGI_APPLICATION = 'contacts.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'demo_1',
-        'USER': 'syrgak',
-        'PASSWORD': 'contacts',
-        'HOST': 'database-1.ch3sed57nm3n.us-east-2.rds.amazonaws.com',
-        'POST': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'contacts.sqlite3'),
     }
-}
+  }
 
 
 # Password validation
