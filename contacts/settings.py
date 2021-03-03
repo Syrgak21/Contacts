@@ -137,11 +137,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # S3 Buckets Config
 
-# AWS_ACCESS_KEY_ID = 'AKIAQQNW32B4L5HVG4A7'
-# AWS_SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'syrgak-bucket'
-#
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'AKIAQQNW32B4L5HVG4A7'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'syrgak-bucket'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
