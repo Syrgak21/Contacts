@@ -24,9 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ir$g*en0u*m==yyz9#ocexk$z56bh8gxiq_!8$jg#!d4v1g1v+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['https://phonebooks-app.herokuapp.com/', '127.0.0.1']
 
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'phonebook',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +80,12 @@ WSGI_APPLICATION = 'contacts.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'demo_1',
+        'USER': 'syrgak',
+        'PASSWORD': 'contacts',
+        'HOST': 'database-1.ch3sed57nm3n.us-east-2.rds.amazonaws.com',
+        'POST': '5432',
     }
 }
 
@@ -127,3 +133,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
+# S3 Buckets Config
+
+# AWS_ACCESS_KEY_ID = 'AKIAQQNW32B4L5HVG4A7'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'syrgak-bucket'
+#
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
