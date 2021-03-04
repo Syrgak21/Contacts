@@ -26,7 +26,11 @@
     {% for contact in contacts %}
       <a href="{% url 'detail_contact' contact.id %}">
       <div class="contact col-sm-12">
+        {% if 'detail_contact' in request.path %}
         <img src="{{contact.imageURL}}" class="contact_img">
+        {% else %}
+        <img src="{% static 'images/profile.png' %}" class="detail_img">
+        {% endif %}
         <div class="contact_info">
           <h4 class="contact_name">{{contact.name}}</h4><br>
           <p class="contact_number">{{contact.number}}</p>
