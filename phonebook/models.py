@@ -19,5 +19,5 @@ class Contact(models.Model):
         try:
             url = self.image.url
         except:
-            url = 'https://syrgak-bucket.s3.amazonaws.com/images/profile.png?AWSAccessKeyId=AKIAQQNW32B4L5HVG4A7&Signature=plLspSKrOze15mJi7h9B5NYVyg0%3D&Expires=1614827774'
+            url = 'https://syrgak-bucket.s3.amazonaws.com/images/profile.png?AWSAccessKeyId=AKIAQQNW32B4L5HVG4A7&Signature=MgWGjOq0dg%2BAhHuWmCoM%2Bj1BeQQ%3D&Expires=1614881925'
         return url
