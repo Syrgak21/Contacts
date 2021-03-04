@@ -9,11 +9,7 @@
 
 
 {% if 'detail_contact' in request.path %}
-{% if detail.image.url %}
 <img src="{{detail.imageURL}}" class="detail_img">
-{% else %}
-<img src="{% static 'images/profile.png' %}" class="detail_img">
-{% endif %}
 <h2>{{detail.name}}</h2>
 {% else %}
 <img src="{% static 'images/profile.png' %}" class="detail_img">
