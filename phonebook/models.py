@@ -19,6 +19,5 @@ class Contact(models.Model):
         try:
             url = self.image.url
         except:
-            {% load static %}
-            url = "{% static 'images/profile.png' %}"
+            url = '../../static/images/profile.png'
         return url
