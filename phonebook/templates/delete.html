@@ -8,11 +8,8 @@
 {% block content%}
 <a href="{% url 'detail_contact' contact.id %}"><i class="fas fa-arrow-circle-left"></i></a>
 
-{% if 'detail_contact' in request.path %}
+
 <img src="{{contact.imageURL}}" class="detail_img">
-{% else %}
-<img src="{% static 'images/profile.png' %}" class="detail_img">
-{% endif %}
 <h2>{{contact.name}}</h2>
 <p class="confirm">Are you sure you want to delete this contact?</p>
 
